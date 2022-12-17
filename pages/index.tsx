@@ -19,7 +19,6 @@ export default function Home() {
   const getUser = async () => {
     const res = await fetch("/api/user");
     const data: any = await res.json();
-    console.log(data);
     setUser(data);
   };
 

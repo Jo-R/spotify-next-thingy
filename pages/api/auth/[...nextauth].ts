@@ -1,14 +1,13 @@
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import SpotifyProvider from "next-auth/providers/spotify";
 
-// TODO TS!
-export default NextAuth({
+export const authOptions: NextAuthOptions = {
   providers: [
     SpotifyProvider({
       authorization:
         "https://accounts.spotify.com/authorize?scope=user-read-email,playlist-read-private",
-      clientId: process.env.SPOTIFY_CLIENT_ID,
-      clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+      clientId: process.env.SPOTIFY_CLIENT_ID || "",
+      clientSecret: process.env.SPOTIFY_CLIENT_SECRET || "",
     }),
   ],
   callbacks: {
@@ -24,4 +23,6 @@ export default NextAuth({
       return session;
     },
   },
-});
+};
+
+export default NextAuth(authOptions);
