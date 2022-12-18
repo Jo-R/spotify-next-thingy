@@ -13,7 +13,7 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async session({ session, token, user }) {
       session.user = user;
-      session.token = token;
+      session.token = token as any; // TODO can do this to remove error but better way?
       return session;
     },
   },

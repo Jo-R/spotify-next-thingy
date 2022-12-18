@@ -6,7 +6,8 @@ const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/me/playlists";
 const USER_ENDPOINT = "https://api.spotify.com/v1/me";
 
 // TODO all this auth code is from a blog post - it works but
-// revisit based on docs etc to see if can improve.
+// revisit based on docs etc to see if can improve. Llke do I need
+// a refresh token every time?
 const getAccessToken = async (refresh_token: string) => {
   const response = await fetch(TOKEN_ENDPOINT, {
     method: "POST",

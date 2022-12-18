@@ -6,3 +6,9 @@ declare module "next-auth" {
     token: JWT;
   }
 }
+
+declare module "next-auth" {
+  interface JWT {
+    accessToken: string;
+  }
+}
