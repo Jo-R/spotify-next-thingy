@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 
-// TODO ts types anys and errors!
+// TODO ts types anys
 export default function Home() {
   const { data: session } = useSession();
   const [list, setList] = useState([]);
