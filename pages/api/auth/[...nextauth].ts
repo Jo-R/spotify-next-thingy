@@ -11,12 +11,6 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, account }) {
-      if (account) {
-        token.accessToken = account.refresh_token;
-      }
-      return token;
-    },
     async session({ session, token, user }) {
       session.user = user;
       session.token = token;
